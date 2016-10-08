@@ -30,7 +30,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
     private static final String UserName = "uname";
     private static final String FirstName = "fname";
     private static final String LastName = "lname";
-    private static final String DATECREATED = "date_created";
+
 
     public DataBaseAdapter(Context _context) {
         super(_context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -40,7 +40,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqlDB) {
         String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "(" + ID + "INTEGER PRIMARY KEY, "
                 + EMAIL + " TEXT UNIQUE," + PASSWORD + " TEXT," + UserName + " TEXT UNIQUE," + FirstName + " TEXT,"
-                + LastName + " TEXT," + DATECREATED + " TEXT" + ")";
+                + LastName + " TEXT" + ")";
 
         sqlDB.execSQL(CREATE_USER_TABLE);
     }
@@ -53,7 +53,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void registerUser(String email, String password, String username, String firstname, String lastname, String datecreated) {
+    public void registerUser(String email, String password, String username, String firstname, String lastname) {
         SQLiteDatabase db = this.getWritableDatabase();
 
 
@@ -63,7 +63,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         values.put(UserName, username);
         values.put(FirstName, firstname);
         values.put(LastName, lastname);
-        values.put(DATECREATED, datecreated);
+
 
         db.insert(TABLE_USER, null, values);
         db.close();

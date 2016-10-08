@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (checkLogin(emailAdd.getText().toString(), pword.getText().toString()) == true) {
+
                 if (sqlDB.validateUserFromEmail(email.getText().toString(), password.getText().toString()) == true
                         || sqlDB.validateUserFromUName(email.getText().toString(), password.getText().toString()) == true) {
-                    //Toast.makeText(getApplicationContext(), "Connecting...", Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent(MainActivity.this, UserAct.class);
                     startActivity(intent);
 
@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
+
+
 
 }
 

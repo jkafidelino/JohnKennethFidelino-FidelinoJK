@@ -24,5 +24,14 @@ public class UserAct extends AppCompatActivity {
             }
         });
         }
+
+    @Override
+    public void onBackPressed(){
+        Intent back = new Intent(Intent.ACTION_MAIN);
+        back.addCategory(Intent.CATEGORY_HOME);
+        back.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(back);
+
     }
+}
 

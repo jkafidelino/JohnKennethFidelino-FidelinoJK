@@ -1,5 +1,6 @@
 package com.mlabs.bbm.firstandroidapp_morningclass;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -22,9 +23,9 @@ public class OnTouchActivity extends AppCompatActivity {
 
         x = (TextView)findViewById(R.id.Xcoordinates);
         y = (TextView)findViewById(R.id.Ycoordinates);
-        differ = (TextView)findViewById(R.id.tvDiff);
-        motion = (TextView)findViewById(R.id.tvMotion);
-        motion1 = (TextView)findViewById(R.id.tvMotion1);
+        differ = (TextView)findViewById(R.id.tvdiff);
+        motion = (TextView)findViewById(R.id.tvmotion);
+        motion1 = (TextView)findViewById(R.id.tvmotion1);
         Quad = (TextView)findViewById(R.id.tvQuad);
 
         Bulls.setOnTouchListener(new View.OnTouchListener() {
@@ -89,5 +90,7 @@ public class OnTouchActivity extends AppCompatActivity {
         }Quad.setText(Quad1);
 
     }
+
+
 }
 

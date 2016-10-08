@@ -3,18 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="@drawable/lipstick">
-=======
-    android:background="@drawable/chi">
->>>>>>> 459b7343915162fff1a55fba7a9c3476db23974f
+    android:background="@drawable/chi"
+    >
 
-    <ImageView android:id="@+id/splash"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:src="@drawable/glamour"
-        android:scaleType="fitEnd"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

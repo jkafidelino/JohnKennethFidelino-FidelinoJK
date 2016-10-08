@@ -30,9 +30,9 @@ public class SignUp extends AppCompatActivity {
         final EditText email = (EditText) findViewById(R.id.etRegUser);
         final EditText password = (EditText) findViewById(R.id.etRegPass);
         final EditText Conpass = (EditText) findViewById(R.id.etConPass);
-        final EditText username = (EditText) findViewById(R.id.eTxtUser);
-        final EditText firstname = (EditText) findViewById(R.id.eTxtFname);
-        final EditText lastname = (EditText) findViewById(R.id.eTextLname);
+        final EditText username = (EditText) findViewById(R.id.etUsername);
+        final EditText firstname = (EditText) findViewById(R.id.etFname);
+        final EditText lastname = (EditText) findViewById(R.id.etLname);
         Button register = (Button) findViewById(R.id.btnReg);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +52,11 @@ public class SignUp extends AppCompatActivity {
                             if (sqlDB.validateEmail(Emails) == true) {
                                 if (sqlDB.validateUserName(uname) == true) {
                                     if (Pass.equals(confirmPassword)) {
-                                        sqlDB.registerUser(Emails, Pass, uname, fname, lname, getDateTime());
+                                        sqlDB.registerUser(Emails, Pass, uname, fname, lname);
                                         Toast.makeText(getApplicationContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(SignUp.this, MainActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     } else {
                                         Toast.makeText(getApplicationContext(), "Password did not match", Toast.LENGTH_SHORT).show();
                                     }
